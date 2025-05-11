@@ -3,7 +3,7 @@ import { ArrowRight, Play } from 'lucide-react'
 
 const HeroSection = () => {
   return (
-    <section className="relative flex flex-col items-center text-center px-6 pt-20 pb-32 max-w-6xl mx-auto overflow-hidden">
+    <section className="relative flex flex-col items-center text-center px-6 pt-15 pb-32 max-w-6xl mx-auto overflow-hidden">
       {/* Decorative math symbols */}
       <div className="absolute inset-0 overflow-hidden opacity-10 select-none pointer-events-none">
         {['+', '−', '×', '÷', '=', '%', '√', 'π', '∑'].map((symbol, i) => (
@@ -43,12 +43,12 @@ const HeroSection = () => {
         <span className="text-accent font-semibold"> global leaderboards</span>!
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4 items-center">
+      <div className="flex gap-4 items-center">
         <Button size="lg" className="font-bold text-lg py-7">
           <span>Start Playing Now</span>
           <ArrowRight size={20} />
         </Button>
-        <Button variant="secondary" className='font-bold text-lg py-7 px-10'>
+        <Button size="lg" variant="outline" className='font-bold text-lg py-7 px-10'>
           <span>Watch Demo</span>
           <Play size={20} />
         </Button>

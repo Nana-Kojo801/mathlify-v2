@@ -12,26 +12,6 @@ function RouteComponent() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
-      {/* Animated background elements */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
-        {[...Array(10)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute rounded-full bg-primary/5"
-            style={{
-              width: `${Math.random() * 200 + 50}px`,
-              height: `${Math.random() * 200 + 50}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${Math.random() * 30 + 20}s`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationName: 'float',
-              animationIterationCount: 'infinite',
-              animationTimingFunction: 'ease-in-out',
-            }}
-          />
-        ))}
-      </div>
 
       {/* Back button */}
       <div className="relative z-10 pt-6 pl-6">
@@ -76,25 +56,6 @@ function RouteComponent() {
           </p>
         </footer>
       </div>
-
-      {/* Floating animation styles */}
-      <style>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translate(0, 0) rotate(0deg);
-          }
-          25% {
-            transform: translate(5%, 15%) rotate(5deg);
-          }
-          50% {
-            transform: translate(-10%, 5%) rotate(-5deg);
-          }
-          75% {
-            transform: translate(8%, -10%) rotate(3deg);
-          }
-        }
-      `}</style>
     </div>
   )
 }

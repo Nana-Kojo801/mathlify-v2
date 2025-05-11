@@ -1,23 +1,20 @@
 import { Outlet, createRootRouteWithContext } from '@tanstack/react-router'
-import ConvexProvider from '../integrations/convex/provider'
-
 import type { QueryClient } from '@tanstack/react-query'
+import { Toaster } from 'sonner'
+import { type AuthContextType } from '@/components/auth-provider'
 
 interface MyRouterContext {
   queryClient: QueryClient
+  auth: AuthContextType
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  component: () => (
-    <>
-      <ConvexProvider>
-        <div className="w-screen h-dvh overflow-y-auto">
-          <Outlet />
-        </div>
-        {/* <TanStackRouterDevtools /> */}
-
-        {/* <TanstackQueryLayout /> */}
-      </ConvexProvider>
-    </>
-  ),
+  component: () => {
+    return (
+      <div className="w-screen h-dvh overflow-y-auto">
+        <Outlet />
+        <Toaster />
+      </div>
+    )
+  },
 })
