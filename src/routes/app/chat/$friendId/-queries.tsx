@@ -7,9 +7,11 @@ import { useFriendsStore } from '@/stores/friends-store'
 
 export const friendQueryOptions = (friendId: User['_id']) => {
   const getFriend = useFriendsStore((state) => state.getFriend)
+  const friend = getFriend(friendId)
   return queryOptions({
     ...convexQuery(api.users.get, { id: friendId }),
     initialData: getFriend(friendId),
+    enabled: !!friend,
   })
 }
 
@@ -26,5 +28,6 @@ export const messagesQueryOptions = (
       friendId,
     }),
     initialData: messages,
+    enabled: !!messages
   })
 }
