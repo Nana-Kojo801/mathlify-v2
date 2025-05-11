@@ -61,6 +61,7 @@ export default function FriendsList() {
   const { data: friends } = useQuery({
     ...convexQuery(api.users.getUsers, { users: user.friends }),
     initialData: localFriends,
+    enabled: !!localFriends
   })
 
   const handleViewAllClick = () => {

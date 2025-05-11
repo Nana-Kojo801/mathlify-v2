@@ -8,7 +8,8 @@ export const useUser = () => {
     
     const { data: liveUser } = useQuery({
         ...convexQuery(api.users.get, { id: user!._id }),
-        initialData: user
+        initialData: user,
+        enabled: !!user
     })
     return liveUser!
 }
